@@ -11,6 +11,8 @@ import com.wesleyreisz.mymusic.service.MockMusicService;
 
 import java.util.List;
 
+import static com.wesleyreisz.mymusic.R.layout.list_view_for_each_song;
+
 
 public class MyMusicActivity extends Activity {
 
@@ -22,8 +24,8 @@ public class MyMusicActivity extends Activity {
         ListView listView = (ListView)findViewById(R.id.listViewFragment);
         List<Song> song = new MockMusicService().findAll();
 
-        SongAdapter songAdapter = new SongAdapter(this,layout.list_view_fragment);
-        listView.setAdapter(SongAdapter);
+        SongAdapter songAdapter = new SongAdapter(this, list_view_for_each_song, song);
+        listView.setAdapter(songAdapter);
     }
 
 
